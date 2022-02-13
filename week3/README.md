@@ -1,13 +1,96 @@
-# example process documentation
+# Progress Bar of your day
 
-this is where you can document your ideas and process for your homework this week
+## Documentation
+
+For this assignment, my idea is to convert our time into a progress bar that easily represents time usage. The brightness/transparency of the background rectangle and the location of the circles in the slider are changing based on the current time in terms of the day. The stroke size of the big circle represents the minutes in the present hour, and the inner one is changing color and size based on seconds in this minute.
+
+## Screenshots
+
+At the beginning of day
+![Progress starting](week3/Screenshots/Screenshot 2022-02-12 at 19-44-20 Pixi Quickstart.png)
+
+At the end of day
+![Progress ending](week3/Screenshots/Screenshot 2022-02-12 at 19-44-55 Pixi Quickstart.png)
+
+Regular Night
+![Progress normal](week3/Screenshots/Screenshot 2022-02-12 at 19-43-28 Progress Bar of Your day by Alan Ren.png)
+
+Mobile layout
+![Mobile layout](week3/Screenshots/Screenshot 2022-02-12 at 19-47-07 Pixi Quickstart.png)
 
 ```typescript
-// you can include snippets of code that you're proud of here
+function update(this: any, delta: number) {
+	let currentSeconds = Math.floor(
+		(new Date().getTime() - TODAY().getTime()) / 1000
+	);
+	let dayProgress = currentSeconds / dayInSeconds;
+	let circleWidth;
 
-points.forEach(p => {
-    graphics.drawCircle(p.x, p.y, 10);
-})
+	//Time convert
+	let secondProgress = new Date().getSeconds() / 60;
+	let minProgress = new Date().getMinutes() / 60;
+
+	this.backgroundRect.clear();
+	this.backgroundRect.beginFill(0x5da1e2, 1 - dayProgress);
+	this.backgroundRect.drawRoundedRect(
+		50,
+		50,
+		window.innerWidth - 100,
+		window.innerHeight - 100,
+		30
+	);
+	this.backgroundRect.endFill();
+
+	this.slider.clear();
+	this.slider.beginFill(0xfafafa, 0.5);
+	if (window.innerWidth > window.innerHeight) {
+		circleWidth = window.innerWidth / (7 * 2.5);
+		this.slider.drawRoundedRect(
+			window.innerWidth / 2 - window.innerWidth / 3,
+			window.innerHeight / 2 - window.innerHeight / 7,
+			window.innerWidth / 1.5,
+			window.innerHeight / 3.5,
+			500
+		);
+	} else if (window.innerWidth < window.innerHeight) {
+		circleWidth = window.innerHeight / (7 * 2.5);
+		this.slider.drawRoundedRect(
+			window.innerWidth / 2 - window.innerWidth / 7,
+			window.innerHeight / 2 - window.innerHeight / 3,
+			window.innerWidth / 3.5,
+			window.innerHeight / 1.5,
+			500
+		);
+	}
+	this.slider.endFill();
+
+	this.dayCircle.clear();
+	this.dayCircle.lineStyle(minProgress * 30, 0xffffff, 1);
+	this.dayCircle.drawCircle(0, 0, circleWidth);
+	if (window.innerWidth > window.innerHeight) {
+		this.dayCircle.x =
+			(window.innerWidth / 1.5 - this.dayCircle.width) * dayProgress +
+			(window.innerWidth / 2 -
+				window.innerWidth / 3 +
+				this.dayCircle.width / 2);
+	} else if (window.innerWidth < window.innerHeight) {
+		this.dayCircle.y =
+			(window.innerHeight / 1.5 - this.dayCircle.width) * dayProgress +
+			(window.innerHeight / 2 -
+				window.innerHeight / 3 +
+				this.dayCircle.width / 2);
+	}
+
+	this.secondCircle.clear();
+	this.secondCircle.x = this.dayCircle.x;
+	this.secondCircle.y = this.dayCircle.y;
+
+	this.secondCircle.beginFill(0x4f398a, secondProgress);
+	this.secondCircle.drawCircle(
+		0,
+		0,
+		(this.dayCircle.width / 2) * secondProgress
+	);
+	this.secondCircle.endFill();
+}
 ```
-
-[here's how you can add a link to other works or documentation that inspired you]()
