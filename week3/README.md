@@ -7,16 +7,16 @@ For this assignment, my idea is to convert our time into a progress bar that eas
 ## Screenshots
 
 At the beginning of day
-![Progress starting](week3/Screenshots/Screenshot 2022-02-12 at 19-44-20 Pixi Quickstart.png)
+![Progress starting](https://github.com/alanvww/Advanced-CC-HW/raw/main/week3/Screenshots/Screenshot%202022-02-12%20at%2019-44-20%20Pixi%20Quickstart.png)
 
 At the end of day
-![Progress ending](week3/Screenshots/Screenshot 2022-02-12 at 19-44-55 Pixi Quickstart.png)
+![Progress ending](https://github.com/alanvww/Advanced-CC-HW/raw/main/week3/Screenshots/Screenshot%202022-02-12%20at%2019-44-55%20Pixi%20Quickstart.png)
 
 Regular Night
-![Progress normal](week3/Screenshots/Screenshot 2022-02-12 at 19-43-28 Progress Bar of Your day by Alan Ren.png)
+![Progress normal](https://github.com/alanvww/Advanced-CC-HW/raw/main/week3/Screenshots/Screenshot%202022-02-12%20at%2019-43-28%20Progress%20Bar%20of%20Your%20day%20by%20Alan%20Ren.png)
 
 Mobile layout
-![Mobile layout](week3/Screenshots/Screenshot 2022-02-12 at 19-47-07 Pixi Quickstart.png)
+![Mobile layout](https://github.com/alanvww/Advanced-CC-HW/raw/main/week3/Screenshots/Screenshot%202022-02-12%20at%2019-47-07%20Pixi%20Quickstart.png)
 
 ```typescript
 function update(this: any, delta: number) {
