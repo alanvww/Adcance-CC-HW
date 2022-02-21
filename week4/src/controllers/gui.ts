@@ -1,0 +1,27 @@
+import * as dat from 'dat.gui';
+import { Timeline } from '../utils/interfaces';
+
+export function guiSetup(tl: Timeline): void {
+	const gui = new dat.GUI();
+
+	let timelineFolder = gui.addFolder('timeline');
+	timelineFolder.open();
+
+	let tlCallbacks = {
+		pause: () => tl.pause(),
+		play: () => tl.play(),
+		reverse: () => tl.reverse(),
+		progress: 0,
+	};
+
+	timelineFolder.add(tlCallbacks, 'pause');
+	timelineFolder.add(tlCallbacks, 'play');
+	timelineFolder.add(tlCallbacks, 'reverse');
+	timelineFolder
+		.add(tlCallbacks, 'progress', 0.0, 1.0, 0.01)
+		.onChange((value) => {
+			tl.play();
+			tl.progress(value);
+			tl.pause();
+		});
+}
