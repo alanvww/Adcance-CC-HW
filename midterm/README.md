@@ -2,8 +2,8 @@
 
 ## Preview
 
-![B/W]('https://github.com/alanvww/Advanced-CC-HW/blob/main/midterm/assets/screenshot/Preview%20%231.png?raw=true')
-![ASCII]('https://github.com/alanvww/Advanced-CC-HW/blob/main/midterm/assets/screenshot/Preview%20%232.png?raw=true')
+![B/W](https://github.com/alanvww/Advanced-CC-HW/blob/main/midterm/assets/screenshot/Preview%20%231.png?raw=true)
+![ASCII](https://github.com/alanvww/Advanced-CC-HW/blob/main/midterm/assets/screenshot/Preview%20%232.png?raw=true)
 
 ## Inspiration
 
@@ -14,13 +14,13 @@ But what if they are chaotic? Or I make them like that :D
 
 ### Randomness
 
-![Randomness]('https://github.com/alanvww/Advanced-CC-HW/blob/main/midterm/assets/screenshot/Randomness.png?raw=true')
+![Randomness](https://github.com/alanvww/Advanced-CC-HW/blob/main/midterm/assets/screenshot/Randomness.png?raw=true)
 
 In this project, based on a grid system, I want to apply randomness as a factor to display. The color of each square will be different when generated. With features like ASCII filter and dot filter, each frame will always look different.
 
 ### Breathing
 
-![Breathing]('https://github.com/alanvww/Advanced-CC-HW/blob/main/midterm/assets/screenshot/Breathing.png?raw=true')
+![Breathing](https://github.com/alanvww/Advanced-CC-HW/blob/main/midterm/assets/screenshot/Breathing.png?raw=true)
 
 Using the timeline animation to change the size of the shapes, the grid system, which is considered stable and organized, will destroy itself, just like a creature with uncertainty.
 
