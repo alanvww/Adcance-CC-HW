@@ -1,6 +1,6 @@
 # Week 10
 
-This project is based on [three.js official example]{https://threejs.org/examples/?q=interact#webgl_interactive_voxelpainter}
+This project is based on [three.js official example](https://threejs.org/examples/?q=interact#webgl_interactive_voxelpainter)
 
 I added following features:
 
