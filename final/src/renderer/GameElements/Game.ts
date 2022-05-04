@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 import { World } from './World';
-import { BaseScene } from '../Setup/Scene';
+import { GameScene } from '../Setup/GameScene';
 import { Settings } from '../Setup/Settings';
 import { Control } from './Control';
 import { Appearance } from './Appearance';
@@ -12,7 +12,7 @@ export class Game {
 	rules: any;
 	boxGeometry: THREE.BoxGeometry;
 	world: World;
-	baseScene: BaseScene;
+	baseScene: GameScene;
 	controller;
 	cubes: THREE.Mesh<THREE.BufferGeometry, THREE.Material>[];
 	appearance;
@@ -32,7 +32,7 @@ export class Game {
 			this.settings.world.height,
 			this.settings.world.depth
 		);
-		this.baseScene = new BaseScene(this.settings.scene, this.settings.camera);
+		this.baseScene = new GameScene(this.settings.scene, this.settings.camera);
 		this.controller = new Control(this);
 
 		this.cubes = [];

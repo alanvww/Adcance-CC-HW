@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import Stats from 'three/examples/jsm/libs/stats.module';
+import { BaseScene } from './BaseScene';
 
-export class BaseScene {
+export class GameScene extends BaseScene {
 	sceneSettings: any = {};
 	cameraSettings: any = {};
 	scene!: THREE.Scene;
@@ -10,6 +11,7 @@ export class BaseScene {
 	stats!: Stats;
 
 	constructor(sceneSettings: object, cameraSettings: object) {
+		super();
 		this.sceneSettings = sceneSettings;
 		this.cameraSettings = cameraSettings;
 
@@ -40,10 +42,18 @@ export class BaseScene {
 			this.cameraSettings.nearClip,
 			this.cameraSettings.farClip
 		);
-		this.camera.position.set(this.cameraSettings.position.x, this.cameraSettings.position.y, this.cameraSettings.position.z);
+		this.camera.position.set(
+			this.cameraSettings.position.x,
+			this.cameraSettings.position.y,
+			this.cameraSettings.position.z
+		);
 	}
 
-	addLight(position: { x: number; y: number; z: number }, color: number, intensity: number) {
+	addLight(
+		position: { x: number; y: number; z: number },
+		color: number,
+		intensity: number
+	) {
 		const light = new THREE.DirectionalLight(color, intensity);
 		light.position.set(position.x, position.y, position.z);
 		this.scene.add(light);
@@ -54,7 +64,12 @@ export class BaseScene {
 		this.scene.add(light);
 	}
 
-	addMesh(geometry: THREE.BufferGeometry, material: THREE.Material, position: { x: number; y: number; z: number }, isVisible: boolean) {
+	addMesh(
+		geometry: THREE.BufferGeometry,
+		material: THREE.Material,
+		position: { x: number; y: number; z: number },
+		isVisible: boolean
+	) {
 		const mesh = new THREE.Mesh(geometry, material);
 		mesh.position.x = position.x;
 		mesh.position.y = position.y;
@@ -76,7 +91,9 @@ export class BaseScene {
 		material: THREE.LineBasicMaterial
 	) {
 		const points = [];
-		points.push(new THREE.Vector3(startPosition.x, startPosition.y, startPosition.z));
+		points.push(
+			new THREE.Vector3(startPosition.x, startPosition.y, startPosition.z)
+		);
 		points.push(new THREE.Vector3(endPosition.x, endPosition.y, endPosition.z));
 
 		const geometry = new THREE.BufferGeometry().setFromPoints(points);
