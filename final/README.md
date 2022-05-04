@@ -10,7 +10,7 @@ I chose this one as my final theme because when I was first studying programming
 
 ### Preview
 
-![Game of Life 3D](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.conwaylife.com%2Fw%2Fimages%2Fa%2Fae%2FGosperglidergun2.png&f=1&nofb=1)
+![Game of Life 3D](https://github.com/alanvww/Advanced-CC-HW/blob/main/final/images/preview.gif?raw=true)
 
 ## Technical Details
 
@@ -28,4 +28,4 @@ I chose this one as my final theme because when I was first studying programming
 
 ## Download
 
-[The Game of Life by Alan Ren](https://en.wikipedia.org/wiki/Conway's_Game_of_Life)
+[The Game of Life by Alan Ren](https://drive.google.com/file/d/1M6hiCF1lLnWIaqjAlbjMmes9DRBULeyl/view?usp=sharing)
